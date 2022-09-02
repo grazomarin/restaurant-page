@@ -14,7 +14,7 @@ module.exports = {
             },
             {
                 test: /\.(woff2|woff|otf)$/,
-                use: 'asset/resource'
+                type: 'asset/resource',
             }
         ]
     },
@@ -26,5 +26,4 @@ module.exports = {
         path: path.dirname(__dirname, 'dist'),
         filename: 'bundle.js',
     },
-/*     optimization: {runtimeChunk: 'single',},*/
 }
