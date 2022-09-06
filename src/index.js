@@ -1,4 +1,5 @@
 import './style.scss';
+import Logo from './images/restaurantLogo.svg'
 import renderHome from './pages/home';
 import renderMenu from './pages/menu';
 import clearPage from './functions/clear';
@@ -8,7 +9,11 @@ var container = document.getElementById('container')
 const home = document.getElementById('home')
 const menu = document.getElementById('menu')
 const contact = document.getElementById('contact')
-const test = document.getElementById('test')
+const title = document.querySelector('.title')
+
+const myLogo = new Image(40);
+myLogo.src = Logo;
+title.prepend(myLogo)
 
 // renderHome()
 

@@ -13,8 +13,12 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(woff2|woff|otf)$/i,
+                test: /\.(woff2|woff|otf|ttf)$/i,
                 type: 'asset/resource',
+            },
+            {
+                test: /\.svg$/i,
+                type: 'asset/resource'
             },
         ]
     },
