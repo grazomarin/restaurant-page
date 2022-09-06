@@ -3,15 +3,19 @@
     src: url(./fonts/CircularAir-Light.woff2);
 }
 
+$font-stack: 'circular', Arial, Halvetica, sans-serif;
+$background-color: rgb(167, 208, 255);
+
 * {
     box-sizing: border-box;
-    font-family: 'circular';
+    font-family: $font-stack;
 }
 
 body {
     margin: 0;
     width: 100vw;
-    height: 100vw;
+    height: 100vh;
+    background-color: $background-color;
 }
 
 #container {
@@ -23,4 +27,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .title {
+        font-size: 3rem;
+    }
 }
+
+iframe {
+    width: 500px;
+    height: 1000px;
+}
+

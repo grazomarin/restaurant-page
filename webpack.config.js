@@ -9,13 +9,13 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
+                test: /\.scss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader']
             },
             {
-                test: /\.(woff2|woff|otf)$/,
+                test: /\.(woff2|woff|otf)$/i,
                 type: 'asset/resource',
-            }
+            },
         ]
     },
     devServer: {
