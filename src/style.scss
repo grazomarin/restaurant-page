@@ -1,75 +1,86 @@
+@use 'styles/abstracts' as *;
+
 @font-face {
     font-family: 'circular';
     src: url(./fonts/CircularAir-Light.woff2) format('woff2');
 
     font-family: 'chartwell';
-    src: url(fonts/ChartwellBarsVertical.woff) format('woff');
+    src: url(./fonts/ChartwellBarsVertical.woff) format('woff');
 }
 
-$title-font: 'charwell';
-$text-font: 'circular', Arial, Halvetica, sans-serif;
-$background-color: /* rgb(167, 208, 255) */ white;
-$button-color: #598ade;
-$golden-color: #f3ca72;
 
-* {
-    box-sizing: border-box;
+html {
     font-family: $text-font;
 }
 
 body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
     background-color: $background-color;
 }
 
 #container {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 .constant {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    margin: 10px 30px 0;
+    gap: 10px;
 
-    .title {
-        font-family: 'chartwell';
+    &__title {
+        font-family: $title-font;
         font-size: 3.5rem;
         color: $golden-color;
         display: flex;
-        align-items: center;
         gap: 10px;
     }
+    
+    &__buttons {
+        display: flex;
+        gap: 15px;
+
+        .test {
+            background-color: red;
+            font-size: large
+        }
+
+        button {
+            @extend %buttonStyle;            
+        }
+    }
 }
+
+    * {
+        flex: 0 0 auto;
+    }
+
 
 iframe {
     width: 500px;
     height: 1000px;
 }
 
-%css-button-sliding-to-left--sky {
+%buttonStyle {
+    font-family: $title-font;
+    font-size: 1.5rem;
     min-width: 130px;
-    height: 40px;
-    color: #fff;
+    height: 42px;
     padding: 5px 10px;
-    font-weight: bold;
     cursor: pointer;
     transition: all 0.3s cubic-bezier(.25, 1, .30, 1);
     position: relative;
     display: inline-block;
     outline: none;
-    border-radius: 5px;
+    border-radius: 6px;
     z-index: 0;
     background: #fff;
     overflow: hidden;
-    border: 2px solid $button-color;
-    color: $button-color;
+    border: none;
+    color: $background-color;
 
-    &:hover {
-        color: #fff;
-    }
     &:hover::after {
         width: 100%;
     }
@@ -82,10 +93,41 @@ iframe {
         top: 0;
         width: 0;
         height: 100%;
-        background: $button-color;
+        background: $golden-color;
     }
 }
 
-.constant button {
-    @extend %css-button-sliding-to-left--sky;
+.main {
+    display: grid;
+    grid-template-rows: 1000px;
+    grid-template-columns: 400px 1fr;
+    align-items: center;
+    margin: 30px;
+    gap: 30px;
+
+    canvas {
+        grid-row: 1/3;
+    }
+
+    &__contents {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        align-items: center;
+        gap: 0px 30px;
+        height: 100%;
+        text-align: start;
+
+
+        img {
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        p {
+            color: $paragraph-color;
+            line-height: 1.4;
+            font-size: 1.3rem;
+        }
+    }
 }
+

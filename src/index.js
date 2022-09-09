@@ -9,15 +9,16 @@ var container = document.getElementById('container')
 const home = document.getElementById('home')
 const menu = document.getElementById('menu')
 const contact = document.getElementById('contact')
-const title = document.querySelector('.title')
+const title = document.querySelector('.constant__title')
 
 const myLogo = new Image(40);
 myLogo.src = Logo;
+myLogo.classList.add('logo')
 title.prepend(myLogo)
 
-// renderHome()
+/* renderHome()
 
-/* home.addEventListener('click', () => {
+home.addEventListener('click', () => {
     clearPage()
     renderHome()
 })
