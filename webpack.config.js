@@ -27,7 +27,7 @@ module.exports = {
         hot: true,
     },
     output: {
-        path: path.dirname(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'main.js',
+        path: path.resolve(__dirname, 'dist'),
     },
 }
