@@ -18,7 +18,7 @@ myLogo.src = Logo;
 myLogo.classList.add('logo')
 title.prepend(myLogo)
 
-renderMenu()
+renderHome()
 
 home.addEventListener('click', () => {
     clearPage()
