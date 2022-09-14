@@ -1,0 +1,83 @@
+@use 'styles/abstracts' as *;
+
+@include keyframes(fade-right) {
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+@include keyframes(fade-left) {
+    from {
+        transform: translateX(50%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+.home {
+    .main {
+        display: grid;
+        grid-template-rows: 1000px;
+        grid-template-columns: 400px 1fr;
+        align-items: center;
+        margin: 30px 0;
+
+        canvas {
+            grid-row: 1/3;
+        }
+
+        &-contents {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            height: auto;
+            max-height: 1000px;
+            align-items: center;
+            text-align: start;
+            margin: 0 30px;
+            gap: 30px 30px;
+
+            &__grape-fields,
+            &__restaurant {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                max-width: $img-size-home;
+                justify-self: center;
+                border-radius: 5px;
+                opacity: 0;
+            }
+
+            &__grape-fields {
+                @include animation(calc(0 * .3s), 1s, fade-right, cubic-bezier(0.3, 1, 0.3, 1), forwards);
+            }
+
+            &__restaurant {
+                @include animation(calc(3 * .3s), 1s, fade-left, cubic-bezier(0.3, 1, 0.3, 1), forwards);
+            }
+
+            p:nth-of-type(1),
+            p:nth-of-type(2) {
+                color: $paragraph-color;
+                line-height: 1.4;
+                font-size: $font-size;
+                opacity: 0;
+            }
+
+            p:nth-of-type(1) {
+                @include animation(calc(1 * .3s), 1s, fade-left, cubic-bezier(0.3, 1, 0.3, 1), forwards);
+            }
+
+            p:nth-of-type(2) {
+                @include animation(calc(2 * .3s), 1s, fade-right, cubic-bezier(0.3, 1, 0.3, 1), forwards);
+            }
+
+        }
+    }
+}

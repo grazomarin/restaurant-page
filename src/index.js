@@ -1,3 +1,6 @@
+import './index.scss';
+import './style-home.scss'
+import './style-menu.scss'
 import Logo from './images/restaurantLogo.svg'
 import renderHome from './pages/home';
 import renderMenu from './pages/menu';
@@ -15,7 +18,7 @@ myLogo.src = Logo;
 myLogo.classList.add('logo')
 title.prepend(myLogo)
 
-renderHome()
+renderMenu()
 
 home.addEventListener('click', () => {
     clearPage()
@@ -30,9 +33,7 @@ contact.addEventListener('click', () => {
     renderContact()
 })
 
+
 //make website check if the page is active
 // if it is then don't reload
 
-//updated the bottle animation
-//added cross compatible animation mixins
-import './style.scss';

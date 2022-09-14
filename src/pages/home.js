@@ -1,8 +1,10 @@
 import { Application } from '@splinetool/runtime';
-import grapeFields from '../images/grapeFields.jpg'
-import restaurant from '../images/restaurant.jpg'
+import grapeFields from '../images/homeImages/grapeFields.jpg'
+import restaurant from '../images/homeImages/restaurant.jpg'
 
-export default function renderHome(image1, image2) {
+export default function renderHome() {
+    container.classList = 'home'
+
     const main = document.createElement('div');
     main.classList.add('main');
 
