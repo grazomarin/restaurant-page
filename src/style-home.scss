@@ -50,7 +50,7 @@
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 max-width: $img-size-home;
                 justify-self: center;
-                border-radius: 5px;
+                border-radius: $border-radius;
                 opacity: 0;
             }
 
@@ -64,9 +64,9 @@
 
             p:nth-of-type(1),
             p:nth-of-type(2) {
-                color: $paragraph-color;
+                color: $font-color;
                 line-height: 1.4;
-                font-size: $font-size;
+                font-size: $p-font-size;
                 opacity: 0;
             }
 

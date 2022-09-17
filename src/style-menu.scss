@@ -4,8 +4,9 @@
     .main {
         display: grid;
         grid-auto-rows: 1fr;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fit, 419px);
         align-items: center;
+        justify-content: center;
         margin: 30px 30px;
         gap: 70px;
 
@@ -33,14 +34,14 @@
             img {
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 height: $img-size-menu;
-                border-radius: 5px;
+                border-radius: $border-radius;
                 width: calc($img-size-menu * 1.5);
             }
 
             p {
-                color: $paragraph-color;
+                color: $font-color;
                 line-height: 1.4;
-                font-size: $font-size;
+                font-size: $p-font-size;
             }
 
             /*             p:nth-of-type(1) {

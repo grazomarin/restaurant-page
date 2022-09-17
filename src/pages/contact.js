@@ -1,6 +1,4 @@
-export default function renderContact () {
-    const test = document.createElement('div')
-    test.textContent = 'contact'
-    container.appendChild(test)
-}
+export default function renderContact() {
+    container.classList = 'contact'
 
+}

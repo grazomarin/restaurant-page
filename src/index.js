@@ -1,6 +1,7 @@
 import './index.scss';
 import './style-home.scss'
 import './style-menu.scss'
+import './style-contact.scss'
 import Logo from './images/restaurantLogo.svg'
 import renderHome from './pages/home';
 import renderMenu from './pages/menu';
@@ -18,7 +19,17 @@ myLogo.src = Logo;
 myLogo.classList.add('logo')
 title.prepend(myLogo)
 
-renderHome()
+
+function setFavicons(favImg) {
+    const headTitle = document.querySelector('head');
+    const setFavicon = document.createElement('link');
+    setFavicon.setAttribute('rel', 'shortcut icon');
+    setFavicon.setAttribute('href', favImg);
+    headTitle.appendChild(setFavicon);
+}
+setFavicons(Logo);
+
+renderContact()
 
 home.addEventListener('click', () => {
     clearPage()
@@ -33,7 +44,4 @@ contact.addEventListener('click', () => {
     renderContact()
 })
 
-
-//make website check if the page is active
-// if it is then don't reload
 
