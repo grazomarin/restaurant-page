@@ -2,6 +2,7 @@
 
 html {
     font-family: $text-font;
+    color: $font-color;
 }
 
 body {
@@ -33,11 +34,6 @@ body {
         display: flex;
         gap: 15px;
 
-        .test {
-            background-color: red;
-            font-size: large
-        }
-
         button {
             @extend %button-style;
         }
@@ -47,4 +43,3 @@ body {
         flex: 0 0 auto;
     }
 }
-

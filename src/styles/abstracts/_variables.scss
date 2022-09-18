@@ -7,15 +7,15 @@ $p-font-size: clamp(1rem, 1.2vw, 1.6rem);
 $contact-font-size: clamp(1.6rem, 1.8vw, 2rem);
 $img-size-home: clamp(300px, 30vw, 800px);
 $img-size-menu: clamp(100px, 30vw, 300px);
-$contact-container-width: clamp(400px, 60vw, 1500px);
+$contact-container-width: clamp(500px, 60vw, 1500px);
 $contact-container-height: clamp(600px, 30vh, 800px);
 $constant-button-width: clamp(75px, 10vw, 150px);
-$input-width: clamp(250px, 15vw, 350px);
+$input-width: clamp(200px, 17vw, 350px);
 $border-radius: 5px;
 $input-border-radius: 10px;
 
 @mixin largeScreen {
-    @media (min-width: 1300px) {
+    @media (min-width: 1400px) {
         @content
     }
 }
