@@ -29,7 +29,7 @@ function setFavicons(favImg) {
 }
 setFavicons(Logo);
 
-renderContact()
+renderHome()
 
 home.addEventListener('click', () => {
     clearPage()
