@@ -7,6 +7,7 @@ import renderHome from './pages/home';
 import renderMenu from './pages/menu';
 import clearPage from './functions/clear';
 import renderContact from './pages/contact';
+import { setLoading, rmvLoadOnLoad, rmvLoadOnTime } from './functions/loadingScreen';
 
 var container = document.getElementById('container')
 const home = document.getElementById('home')
@@ -27,9 +28,13 @@ function setFavicons(favImg) {
     setFavicon.setAttribute('href', favImg);
     headTitle.appendChild(setFavicon);
 }
+
 setFavicons(Logo);
 
+setLoading()
+rmvLoadOnLoad()
 renderHome()
+
 
 home.addEventListener('click', () => {
     clearPage()
@@ -37,6 +42,8 @@ home.addEventListener('click', () => {
 })
 menu.addEventListener('click', () => {
     clearPage()
+    setLoading()
+    rmvLoadOnTime()
     renderMenu()
 })
 contact.addEventListener('click', () => {

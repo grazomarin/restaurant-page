@@ -21,11 +21,11 @@ export default function renderHome() {
 
     let text1 = document.createElement('p');
     let text2 = document.createElement('p');
-    text1.textContent = text2.textContent = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illo velit id, veniam repudiandae neque ab tempora eligendi a laborum nisi fugiat mollitia, obcaecati cupiditate aspernatur voluptatum magni quos delectus vero iure facere hic quae iusto. Architecto error illum, laudantium expedita harum, ea accusamus maxime sapiente mollitia magni ducimus sunt ab nostrum ipsa? Explicabo eaque nobis quam asperiores eligendi minima culpa ipsa doloribus voluptates laudantium doloremque est magnam inventore dolore quos, itaque debitis voluptatum soluta? Accusantium possimus suscipit sapiente deserunt totam aliquid laboriosam magnam hic tenetur laudantium. Non ullam autem quas debitis, dolorum perspiciatis quis, vel dolore atque, iusto fugiat!';
+    text1.textContent = text2.textContent = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo illo velit id, veniam repudiandae neque ab tempora eligendi a laborum nisi fugiat mollitia, obcaecati cupiditate aspernatur voluptatum magni quos delectus vero iure facere hic quae iusto. Architecto error illum, laudantium expedita harum, ea accusamus maxime sapiente mollitia magni ducimus sunt ab nostrum ipsa? Explicabo eaque nobis quam asperiores eligendi minima culpa ipsa doloribus voluptates laudantium doloremque est magnam inventore dolore quos';
 
     const bottle = document.createElement('canvas');
-    bottle.width = 400;
-    bottle.height = 1000;
+    bottle.width = 350;
+    bottle.style.minHeight = '700px'
 
     const app = new Application(bottle);
     app.load('https://prod.spline.design/k4qLStuvRveZcxqt/scene.splinecode');

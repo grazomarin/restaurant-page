@@ -4,11 +4,11 @@ import location from "../images/contactImages/location.svg"
 import mail from "../images/contactImages/mail.svg"
 import phone from "../images/contactImages/phone.svg"
 
-const date = moment();
+const date = moment().add(1, 'd');
 const currentDate = date.format('YYYY-MM-DD');
 
 const inputData = [
-    ['text', 'name', 'required', 'Your Full Name:', ''],
+    ['text', 'name', 'required', 'Your Full Name:', '.*'],
     ['email', 'email', 'none', 'Your Email:', '.*@.*\..*'],
     ['phone', 'phone', 'required', 'Your Phone Number:', '(\+\d{1,4})?[ -]?\(?(\d{2,3})\)?[ -]?(\d{3})[ -]?(?:(\d{2})[ -]?(\d{2}))'],
     ['date', 'date', 'required', 'Reserve Date:', '']
@@ -49,7 +49,7 @@ export default function renderContact() {
     const submit = document.createElement('button')
     submit.textContent = 'Submit'
     submit.classList = 'submit'
-    submit.setAttribute('type', 'reset')
+    submit.setAttribute('type', 'submit')
 
     for (let i = 0; i < 4; i++) {
         form.appendChild(inputBundle.cloneNode(true));
@@ -67,6 +67,8 @@ export default function renderContact() {
         form.querySelectorAll('.main-container-form-line')[i].append(label.cloneNode(true), input.cloneNode(true));
         form.querySelectorAll('input')[i].setAttribute(inputData[i][2], '')
     }
+
+    form.querySelector('input[type="date"]').setAttribute('min', currentDate)
 
     const divider = document.createElement('div')
     divider.classList = 'divider'

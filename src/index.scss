@@ -1,5 +1,6 @@
 @use 'styles/abstracts' as *;
 
+
 html {
     font-family: $text-font;
     color: $font-color;
@@ -9,9 +10,28 @@ body {
     background-color: $background-color;
 }
 
-#container {
+.loadingScreen {
+    top: 0;
+    position: absolute;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    z-index: 100;
+    background-color: $background-color;
+
+    &__logoAnim {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation: anim .9s infinite linear;
+        scroll-behavior: none;
+    }
+}
+
+#container {
+    position: absolute;
+    width: 100vw;
+    height: auto;
 }
 
 .constant {
@@ -42,4 +62,5 @@ body {
     * {
         flex: 0 0 auto;
     }
+
 }
